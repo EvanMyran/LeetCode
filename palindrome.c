@@ -1,13 +1,26 @@
+//USING UNITS OF 10 TO DETERMINE PALINDROME NUMBERS
 bool isPalindrome(int x) {
+
+    //ZERO ALONE IS A PALINDROME
     if(x == 0) return true;
+
+    //CHECK FOR NEGATIVES AND ANY NUMBER ENDING IN ZERO
+    // % IS A DIVIDE TO GET THE REMAINDER
     if(x < 0 || x % 10 == 0) return false;
 
+    //INITIALIZE I AS THE PALINDROME AND J AS THE STRING INPUT
     double i = 0;
     double j = x;
 
+    //WHILE THE INPUT STRING IS GREATER THAN 0
     while(x > 0) {
+
+        //SET A TEMP VARIABLE EQUAL TO THE REMAINDER OF INPUT PALINDROME DIVIDED BY 10 (SHIFT THE DECIMAL)
         int z = x % 10;
+
+        //REVERSE PALINDROME TIMES 10 (SHIFT THE DECIMAL) AND ADD THE TEMP VARIABLE
         i = i * 10 + z;
+        //DIVIDE THE ORIGINAL STRING BY 10 (SHIFT THE DECIMAL)
         x = x / 10;
     }
 
