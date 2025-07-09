@@ -1,17 +1,23 @@
-#include <stdio.h>
+//ALLOWS FOR BOOLEAN TYPES
 #include <stdbool.h>
+//STDLIB FOR MALLOC
 #include <stdlib.h>
+//STRING FO THE STRLEN FUNCTION
 #include <string.h>
 
 bool isValid(char* s) {
-    
+    //GET THE LENGTH OF THE STRING
     int len = strlen(s);
 
-    // Stack to hold open brackets
+    //BUILD A STACK TO HOLD OPEN PARANTHESES
     char* stack = (char*)malloc(len);
+
+    //INITIALIZE THE TOP OF THE STACK
     int top = -1;
 
+    //FOR LOOP TO PARSE THROUGH THE STRING
     for (int i = 0; i < len; i++) {
+        //SET CHAR TO FIRST INSTANCE OF TE STRING
         char c = s[i];
 
         if (c == '(' || c == '{' || c == '[') {
